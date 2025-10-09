@@ -31,13 +31,13 @@ document.querySelectorAll(".card").forEach((card) => {
 document.querySelectorAll(".card video").forEach((video) => {
   const card = video.closest(".card");
 
-  video.removeAttribute("controls"); // supprime la barre
-  video.muted = true; // lecture silencieuse obligatoire pour autoplay
+  video.removeAttribute("controls");
+  video.muted = true;
   video.preload = "metadata";
 
   card.addEventListener("mouseenter", () => {
     video.currentTime = 0;
-    video.play().catch(() => {}); // évite erreurs autoplay
+    video.play().catch(() => {});
   });
 
   card.addEventListener("mouseleave", () => {
@@ -46,7 +46,10 @@ document.querySelectorAll(".card video").forEach((video) => {
   });
 });
 
-// --- Ouverture du lien GitHub au clic ---
+// --- Détecte si on est sur mobile ---
+const isMobile = window.innerWidth <= 768;
+
+// --- Liens GitHub ---
 const githubLinks = {
   "SpaceShooter": "https://github.com/Fan-tome14/SpaceShooter",
   "SuperBonusIA": "https://github.com/Fan-tome14/SuperBonusIA",
@@ -58,10 +61,37 @@ const githubLinks = {
 
 document.querySelectorAll(".card").forEach((card) => {
   const title = card.querySelector("h4")?.innerText.trim();
-  if (githubLinks[title]) {
-    card.style.cursor = "pointer";
-    card.addEventListener("click", () => {
-      window.open(githubLinks[title], "_blank");
-    });
+  const githubLink = githubLinks[title];
+
+  if (githubLink) {
+    if (isMobile) {
+      // --- Sur mobile : on ajoute seulement le bouton ---
+      let btn = document.createElement("a");
+      btn.href = githubLink;
+      btn.target = "_blank";
+      btn.innerText = "Voir sur GitHub";
+      btn.classList.add("github-btn");
+      btn.style.display = "inline-block";
+      btn.style.marginTop = "10px";
+      btn.style.padding = "5px 10px";
+      btn.style.border = "1px solid rgba(236,72,153,0.3)";
+      btn.style.borderRadius = "5px";
+      btn.style.color = "#fff";
+      btn.style.textDecoration = "none";
+      btn.style.fontFamily = "'Orbitron', sans-serif";
+      btn.style.fontSize = "12px";
+      btn.style.boxShadow = "0 0 3px rgba(236,72,153,0.2)";
+      btn.style.transition = "0.3s";
+      btn.onmouseover = () => { btn.style.boxShadow = "0 0 6px rgba(236,72,153,0.3)"; };
+      btn.onmouseout = () => { btn.style.boxShadow = "0 0 3px rgba(236,72,153,0.2)"; };
+
+      card.appendChild(btn);
+    } else {
+      // --- Sur desktop : clic sur toute la carte ---
+      card.style.cursor = "pointer";
+      card.addEventListener("click", () => {
+        window.open(githubLink, "_blank");
+      });
+    }
   }
 });

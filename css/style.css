@@ -192,3 +192,41 @@ footer {
   0%, 100% { text-shadow: 0 0 10px #06b6d4, 0 0 20px #ec4899; }
   50% { text-shadow: 0 0 20px #06b6d4, 0 0 40px #ec4899; }
 }
+
+/* Responsive Mobile */
+@media screen and (max-width: 768px) {
+  .symbol{
+    display : none;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+  }
+
+  .hero-media {
+    display: none; 
+  }
+
+  .projects {
+    padding: 40px 30px; 
+  }
+
+  .projects h3 {
+    text-align: center; 
+  }
+
+  .grid {
+    grid-template-columns: 1fr; 
+    justify-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+
+  .tech-tags {
+    justify-content: center;
+  }
+}
