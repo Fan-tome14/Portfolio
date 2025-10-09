@@ -1,4 +1,4 @@
-// Animation subtile du header au scroll
+// --- Animation subtile du header au scroll ---
 window.addEventListener("scroll", () => {
   const header = document.querySelector(".header");
   if (window.scrollY > 30) {
@@ -10,7 +10,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Animation d'apparition des cartes
+// --- Animation d'apparition des cartes ---
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -27,24 +27,26 @@ document.querySelectorAll(".card").forEach((card) => {
   observer.observe(card);
 });
 
-
-// --- Ajout du comportement des vidéos au survol ---
+// --- Vidéos des projets : lecture au survol, sans contrôles ---
 document.querySelectorAll(".card video").forEach((video) => {
   const card = video.closest(".card");
 
-  // Lecture au survol
+  video.removeAttribute("controls"); // supprime la barre
+  video.muted = true; // lecture silencieuse obligatoire pour autoplay
+  video.preload = "metadata";
+
   card.addEventListener("mouseenter", () => {
-    video.play();
+    video.currentTime = 0;
+    video.play().catch(() => {}); // évite erreurs autoplay
   });
 
-  // Pause à la sortie
   card.addEventListener("mouseleave", () => {
     video.pause();
-    video.currentTime = 0; // remet au début pour un effet propre
+    video.currentTime = 0;
   });
 });
 
-// --- Ajout de l'ouverture du lien GitHub au clic ---
+// --- Ouverture du lien GitHub au clic ---
 const githubLinks = {
   "SpaceShooter": "https://github.com/Fan-tome14/SpaceShooter",
   "SuperBonusIA": "https://github.com/Fan-tome14/SuperBonusIA",
