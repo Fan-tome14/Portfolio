@@ -16,6 +16,13 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
+        // --- Lecture automatique des vidéos sur mobile ---
+        if (isMobile) {
+          const video = entry.target.querySelector("video");
+          if (video) {
+            video.play().catch(() => {});
+          }
+        }
       }
     });
   },
@@ -27,27 +34,29 @@ document.querySelectorAll(".card").forEach((card) => {
   observer.observe(card);
 });
 
-// --- Vidéos des projets : lecture au survol, sans contrôles ---
-document.querySelectorAll(".card video").forEach((video) => {
-  const card = video.closest(".card");
-
-  video.removeAttribute("controls");
-  video.muted = true;
-  video.preload = "metadata";
-
-  card.addEventListener("mouseenter", () => {
-    video.currentTime = 0;
-    video.play().catch(() => {});
-  });
-
-  card.addEventListener("mouseleave", () => {
-    video.pause();
-    video.currentTime = 0;
-  });
-});
-
 // --- Détecte si on est sur mobile ---
 const isMobile = window.innerWidth <= 768;
+
+// --- Vidéos des projets ---
+document.querySelectorAll(".card video").forEach((video) => {
+  video.removeAttribute("controls"); // supprime la barre
+  video.muted = true; // lecture silencieuse obligatoire pour autoplay
+  video.preload = "metadata";
+
+  if (!isMobile) {
+    // --- Sur desktop : lecture au hover ---
+    const card = video.closest(".card");
+    card.addEventListener("mouseenter", () => {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    });
+    card.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
+  // Sur mobile : la lecture se fait automatiquement via l'observer
+});
 
 // --- Liens GitHub ---
 const githubLinks = {
@@ -86,6 +95,7 @@ document.querySelectorAll(".card").forEach((card) => {
       btn.onmouseout = () => { btn.style.boxShadow = "0 0 3px rgba(236,72,153,0.2)"; };
 
       card.appendChild(btn);
+      card.style.cursor = "default"; // désactive le clic sur la carte
     } else {
       // --- Sur desktop : clic sur toute la carte ---
       card.style.cursor = "pointer";
