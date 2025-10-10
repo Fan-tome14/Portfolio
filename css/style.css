@@ -206,14 +206,7 @@ body {
   box-shadow: 0 0 6px rgba(236,72,153,0.3);
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  font-size: 13px;
-  opacity: 0.6;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
+
 
 /* ANIMATIONS */
 @keyframes glow {
@@ -305,4 +298,111 @@ footer {
   transform: scale(0.95);
   pointer-events: none;
   display: none;
+}
+/* --- FOOTER --- */
+footer {
+  position: relative;
+  padding: 40px 20px;
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: #000;
+}
+
+/* Conteneur général du contenu du footer */
+footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Texte copyright */
+footer p {
+  margin: 0;
+  opacity: 0.7;
+}
+
+/* --- BOUTONS DE RÉSEAUX SOCIAUX --- */
+footer .social-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Style des boutons */
+footer .Btn {
+  width: 45px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0.8;
+}
+
+footer .Btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Fond animé au survol */
+footer .BG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #181818;
+  z-index: -1;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+footer .svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  border-radius: 10px;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+  transition: all 0.3s;
+}
+
+footer .Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+footer .Btn:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+/* --- VERSION MOBILE --- */
+@media screen and (max-width: 768px) {
+  footer .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .social-buttons {
+    justify-content: center;
+  }
+
+  footer .Btn {
+    width: 34px;
+    height: 34px;
+  }
 }
