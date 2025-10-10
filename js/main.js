@@ -109,3 +109,66 @@ document.querySelectorAll(".card").forEach((card) => {
     }
   }
 });
+// --- FILTRAGE DES PROJETS ---
+const filterButtons = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".card");
+
+let activeFilters = new Set(); // Liste des filtres actifs
+
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const tech = btn.dataset.tech;
+
+    // --- Si "Tous" est cliqué : on réinitialise tout ---
+    if (tech === "all") {
+      activeFilters.clear();
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      updateCards();
+      return;
+    }
+
+    // --- Désactive le bouton "Tous" ---
+    document.querySelector('[data-tech="all"]').classList.remove("active");
+
+    // --- Si déjà actif, on le retire ---
+    if (activeFilters.has(tech)) {
+      activeFilters.delete(tech);
+      btn.classList.remove("active");
+    } 
+    // --- Sinon, on l’ajoute ---
+    else {
+      activeFilters.add(tech);
+      btn.classList.add("active");
+    }
+
+    // --- Si plus aucun filtre sélectionné : "Tous" redevient actif ---
+    if (activeFilters.size === 0) {
+      document.querySelector('[data-tech="all"]').classList.add("active");
+    }
+
+    updateCards();
+  });
+});
+
+function updateCards() {
+  cards.forEach((card) => {
+    const tags = Array.from(card.querySelectorAll(".tech-tags span")).map(
+      (span) => span.innerText.trim()
+    );
+
+    // Si aucun filtre ou "Tous" -> tout afficher
+    if (activeFilters.size === 0) {
+      card.classList.remove("hidden-filter");
+      return;
+    }
+
+    // Sinon, afficher si AU MOINS une correspondance
+    const hasMatch = [...activeFilters].some((filter) => tags.includes(filter));
+    if (hasMatch) {
+      card.classList.remove("hidden-filter");
+    } else {
+      card.classList.add("hidden-filter");
+    }
+  });
+}
