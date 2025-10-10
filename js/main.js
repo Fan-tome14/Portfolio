@@ -1,3 +1,6 @@
+// --- Détecte si on est sur mobile ---
+const isMobile = window.innerWidth <= 768;
+
 // --- Animation subtile du header au scroll ---
 window.addEventListener("scroll", () => {
   const header = document.querySelector(".header");
@@ -10,54 +13,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// --- Animation d'apparition des cartes ---
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        // --- Lecture automatique des vidéos sur mobile ---
-        if (isMobile) {
-          const video = entry.target.querySelector("video");
-          if (video) {
-            video.play().catch(() => {});
-          }
-        }
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-document.querySelectorAll(".card").forEach((card) => {
-  card.classList.add("hidden");
-  observer.observe(card);
-});
-
-// --- Détecte si on est sur mobile ---
-const isMobile = window.innerWidth <= 768;
-
-// --- Vidéos des projets ---
-document.querySelectorAll(".card video").forEach((video) => {
-  video.removeAttribute("controls"); // supprime la barre
-  video.muted = true; // lecture silencieuse obligatoire pour autoplay
-  video.preload = "metadata";
-
-  if (!isMobile) {
-    // --- Sur desktop : lecture au hover ---
-    const card = video.closest(".card");
-    card.addEventListener("mouseenter", () => {
-      video.currentTime = 0;
-      video.play().catch(() => {});
-    });
-    card.addEventListener("mouseleave", () => {
-      video.pause();
-      video.currentTime = 0;
-    });
-  }
-  // Sur mobile : la lecture se fait automatiquement via l'observer
-});
-
 // --- Liens GitHub ---
 const githubLinks = {
   "SpaceShooter": "https://github.com/Fan-tome14/SpaceShooter",
@@ -68,13 +23,62 @@ const githubLinks = {
   "TowerDefense": "https://github.com/Fan-tome14/TowerDefense"
 };
 
+// --- Animation d'apparition des cartes ---
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        // --- Lecture automatique des vidéos sur mobile ---
+        if (isMobile) {
+          const video = entry.target.querySelector("video");
+          if (video) {
+            video.style.display = "block";
+            requestAnimationFrame(() => {
+              video.play().catch(() => {});
+            });
+          }
+        }
+      }
+    });
+  },
+  { threshold: 0.5 } // au moins 50% visible avant lecture
+);
+
+document.querySelectorAll(".card").forEach((card) => {
+  card.classList.add("hidden");
+  observer.observe(card);
+});
+
+// --- Vidéos des projets ---
+document.querySelectorAll(".card video").forEach((video) => {
+  video.removeAttribute("controls");
+  video.muted = true;
+  video.preload = "metadata";
+  video.playsInline = true; // essentiel sur iOS mobile
+
+  if (!isMobile) {
+    // Sur desktop : lecture au hover
+    const card = video.closest(".card");
+    card.addEventListener("mouseenter", () => {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    });
+    card.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
+});
+
+// --- Gestion des liens GitHub ---
 document.querySelectorAll(".card").forEach((card) => {
   const title = card.querySelector("h4")?.innerText.trim();
   const githubLink = githubLinks[title];
 
   if (githubLink) {
     if (isMobile) {
-      // --- Sur mobile : on ajoute seulement le bouton ---
+      // --- Sur mobile : bouton GitHub ---
       let btn = document.createElement("a");
       btn.href = githubLink;
       btn.target = "_blank";
