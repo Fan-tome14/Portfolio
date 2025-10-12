@@ -172,3 +172,14 @@ function updateCards() {
     }
   });
 }
+
+// Barre de recherche : filtrage des projets par titre
+document.getElementById('searchInput').addEventListener('input', function() {
+  const searchText = this.value.toLowerCase();
+  const projects = document.querySelectorAll('.card'); // adapte la classe si besoin
+
+  projects.forEach(project => {
+    const title = project.querySelector('.project-title').textContent.toLowerCase();
+    project.style.display = title.includes(searchText) ? 'block' : 'none';
+  });
+});

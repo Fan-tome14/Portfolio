@@ -64,6 +64,8 @@
 
   <section class="projects">
     <h3>Projets Récents</h3>
+
+      <!-- Bar de filtrage -->
       <div class="filter-bar">
         <button class="filter-btn active" data-tech="all">Tous</button>
         <button class="filter-btn" data-tech="Unreal Engine">Unreal Engine</button>
@@ -74,12 +76,29 @@
         <button class="filter-btn" data-tech="IA">IA</button>
         <button class="filter-btn" data-tech="Multiplayer">Multiplayer</button>
       </div>
+
+      <!-- Bar de recherche -->
+      <div class="search-bar">
+        <div class="search-wrapper">
+          <input type="text" id="searchInput" placeholder="Rechercher un projet..." />
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M21 21l-4.35-4.35m2.1-5.4a7.5 7.5 0 11-15 0 7.5 7.5 0 0115 0z" 
+                  stroke="rgba(236, 72, 153, 0.8)" 
+                  stroke-width="2" 
+                  fill="none" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+    <!-- Projects -->
     <div class="grid">
 
       <!-- Project 1 -->
       <div class="card">
         <img src="assets/spaceshooter.png" alt="SpaceShooter">
-        <h4>SpaceShooter</h4>
+        <h4 class="project-title">SpaceShooter</h4>
         <p>Jeu de type Space Shooter, développé sous Unreal Engine, où le pilote détruit des astéroïdes dans l'espace.</p>
         <video src="assets/spaceshooter.mp4"></video>
 
@@ -110,7 +129,7 @@
       <!-- Project 2 -->
       <div class="card">
         <img src="assets/superbonusia.png" alt="SuperBonusIA">
-        <h4>SuperBonusIA</h4>
+        <h4 class="project-title" >SuperBonusIA</h4>
         <p>IA développée sous Unreal Engine, où une IA de crabe autonome récupère des coquillages.</p>
         <video src="assets/superbonusia.mp4"></video>
         <div class="tech-tags">
@@ -123,7 +142,7 @@
       <!-- Project 3 -->
       <div class="card">
         <img src="assets/travelling.png" alt="Travelling-Replication">
-        <h4>Travelling-Replication</h4>
+        <h4 class="project-title" >Travelling-Replication</h4>
         <p>Introduction au réseau multijoueur en ligne, avec un système de statut et des interactions sur le terrain.</p>
         <video src="assets/travelling.mp4"></video>
         <div class="tech-tags">
@@ -136,7 +155,7 @@
       <!-- Project 4 -->
       <div class="card">
         <img src="assets/aloneinspace.png" alt="AloneInSpace">
-        <h4>AloneInSpace</h4>
+        <h4 class="project-title" >AloneInSpace</h4>
         <p>Jeu VR sur Unity : incarnez un astronaute résolvant des problèmes à bord de son vaisseau pour survivre.</p>
         <video src="assets/aloneinspace.mp4"></video>
         <div class="tech-tags-wrapper">
@@ -152,7 +171,7 @@
       <!-- Project 5 -->
       <div class="card">
         <img src="assets/pacman.png" alt="PacMan">
-        <h4>PacMan</h4>
+        <h4 class="project-title" >PacMan</h4>
         <p>Pac-Man sous Unreal Engine : contrôlez Pac-Man poursuivi par quatre IA fantômes aux comportements distincts.</p>
         <video src="assets/pacman.mp4"></video>
         <div class="tech-tags-wrapper">
@@ -207,7 +226,7 @@
       <!-- Project 6 -->
       <div class="card">
         <img src="assets/towerdefense.png" alt="TowerDefense">
-        <h4>TowerDefense</h4>
+        <h4 class="project-title" >TowerDefense</h4>
         <p>Tower Defense basé sur un design data-driven : mécaniques, ennemis et équilibrage pilotés par données.</p>
         <video src="assets/towerdefense.mp4"></video>
         <div class="tech-tags-wrapper">
