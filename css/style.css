@@ -246,6 +246,10 @@ body {
   .hero-tech-tags {
     justify-content: center;
   }
+
+  .header{
+    padding: 20px 30px;
+  }
 }
 
 
@@ -1112,7 +1116,7 @@ footer .Btn:hover .svgContainer {
 /* Conteneur du champ + icône */
 .search-wrapper {
   position: relative;
-  width: 60%;
+  width: 80%;
   max-width: 400px;
 }
 
