@@ -29,7 +29,6 @@ body {
 }
 
 .symbol {
-  background: linear-gradient(135deg, #06b6d4, #ec4899);
   width: 55px;
   height: 55px;
   border-radius: 12px;
@@ -39,7 +38,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   font-weight: 700;
   font-size: 20px;
-  color: #000;
+  color: #ffffff;
   box-shadow: 0 0 20px rgba(236,72,153,0.5);
 }
 
