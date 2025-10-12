@@ -29,7 +29,7 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        // --- Lecture automatique des vidéos sur mobile ---
+        // Lecture automatique des vidéos sur mobile
         if (isMobile) {
           const video = entry.target.querySelector("video");
           if (video) {
@@ -42,7 +42,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.5 } // au moins 50% visible avant lecture
+  { threshold: 0.5 } // au moins 50% visible
 );
 
 document.querySelectorAll(".card").forEach((card) => {
@@ -78,7 +78,7 @@ document.querySelectorAll(".card").forEach((card) => {
 
   if (githubLink) {
     if (isMobile) {
-      // --- Sur mobile : bouton GitHub ---
+      // Sur mobile : bouton GitHub
       let btn = document.createElement("a");
       btn.href = githubLink;
       btn.target = "_blank";
@@ -101,7 +101,7 @@ document.querySelectorAll(".card").forEach((card) => {
       card.appendChild(btn);
       card.style.cursor = "default"; // désactive le clic sur la carte
     } else {
-      // --- Sur desktop : clic sur toute la carte ---
+      // Sur desktop : clic sur toute la carte
       card.style.cursor = "pointer";
       card.addEventListener("click", () => {
         window.open(githubLink, "_blank");
@@ -109,17 +109,20 @@ document.querySelectorAll(".card").forEach((card) => {
     }
   }
 });
-// --- FILTRAGE DES PROJETS ---
+
+// --- FILTRAGE + RECHERCHE ---
 const filterButtons = document.querySelectorAll(".filter-btn");
 const cards = document.querySelectorAll(".card");
+const searchInput = document.getElementById("searchInput");
 
-let activeFilters = new Set(); // Liste des filtres actifs
+let activeFilters = new Set();
+let searchText = "";
 
+// Gestion des filtres
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
     const tech = btn.dataset.tech;
 
-    // --- Si "Tous" est cliqué : on réinitialise tout ---
     if (tech === "all") {
       activeFilters.clear();
       filterButtons.forEach((b) => b.classList.remove("active"));
@@ -128,21 +131,16 @@ filterButtons.forEach((btn) => {
       return;
     }
 
-    // --- Désactive le bouton "Tous" ---
     document.querySelector('[data-tech="all"]').classList.remove("active");
 
-    // --- Si déjà actif, on le retire ---
     if (activeFilters.has(tech)) {
       activeFilters.delete(tech);
       btn.classList.remove("active");
-    } 
-    // --- Sinon, on l’ajoute ---
-    else {
+    } else {
       activeFilters.add(tech);
       btn.classList.add("active");
     }
 
-    // --- Si plus aucun filtre sélectionné : "Tous" redevient actif ---
     if (activeFilters.size === 0) {
       document.querySelector('[data-tech="all"]').classList.add("active");
     }
@@ -151,35 +149,29 @@ filterButtons.forEach((btn) => {
   });
 });
 
+// Recherche
+searchInput.addEventListener("input", function() {
+  searchText = this.value.toLowerCase();
+  updateCards();
+});
+
+// Fonction commune pour filtrage + recherche
 function updateCards() {
   cards.forEach((card) => {
+    const title = card.querySelector(".project-title").innerText.toLowerCase();
     const tags = Array.from(card.querySelectorAll(".tech-tags span")).map(
       (span) => span.innerText.trim()
     );
 
-    // Si aucun filtre ou "Tous" -> tout afficher
-    if (activeFilters.size === 0) {
-      card.classList.remove("hidden-filter");
-      return;
-    }
+    const matchesSearch = title.includes(searchText);
+    const matchesFilter =
+      activeFilters.size === 0 ||
+      [...activeFilters].some((filter) => tags.includes(filter));
 
-    // Sinon, afficher si AU MOINS une correspondance
-    const hasMatch = [...activeFilters].some((filter) => tags.includes(filter));
-    if (hasMatch) {
-      card.classList.remove("hidden-filter");
+    if (matchesSearch && matchesFilter) {
+      card.style.display = "block";
     } else {
-      card.classList.add("hidden-filter");
+      card.style.display = "none";
     }
   });
 }
-
-// Barre de recherche : filtrage des projets par titre
-document.getElementById('searchInput').addEventListener('input', function() {
-  const searchText = this.value.toLowerCase();
-  const projects = document.querySelectorAll('.card'); // adapte la classe si besoin
-
-  projects.forEach(project => {
-    const title = project.querySelector('.project-title').textContent.toLowerCase();
-    project.style.display = title.includes(searchText) ? 'block' : 'none';
-  });
-});

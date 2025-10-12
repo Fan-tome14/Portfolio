@@ -1158,3 +1158,10 @@ footer .Btn:hover .svgContainer {
 }
 
 
+.card {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.card[style*="display: none"] {
+  opacity: 0;
+  transform: scale(0.95);
+}
