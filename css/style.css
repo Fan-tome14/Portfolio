@@ -1196,7 +1196,7 @@ footer .Btn:hover .svgContainer {
   left: 50%;
   width: 3px;
   height: 75%;
-  background: linear-gradient(180deg, rgba(236,72,153,0.5), rgba(236,72,153,0.1));
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.22), rgba(236,72,153,0.5), rgba(236,72,153,0.1));
   transform: translateX(-50%);
   box-shadow: 0 0 10px rgba(236,72,153,0.3);
 }
@@ -1277,7 +1277,7 @@ footer .Btn:hover .svgContainer {
   }
 
   .timeline-line {
-    left: 8px;
+    left: 20px;
   }
 
   .timeline-item {
@@ -1293,6 +1293,21 @@ footer .Btn:hover .svgContainer {
   }
 
   .timeline-item::before {
-    left: 0;
+    left: -10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-title {
+    font-size: 34px;
+  }
+  .timeline-item p{
+    font-size: 12px;
+  }
+  .timeline-item h4{
+    font-size: 15px;
+  }
+  .timeline-item .content{
+    padding: 10px;
   }
 }
