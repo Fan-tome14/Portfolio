@@ -1259,11 +1259,11 @@ footer .Btn:hover .svgContainer {
 }
 
 .timeline-item.left::before {
-  right: -8px;
+  right: -9.5px;
 }
 
 .timeline-item.right::before {
-  left: -8px;
+  left: -9.5px;
 }
 
 .timeline-item:hover::before {
