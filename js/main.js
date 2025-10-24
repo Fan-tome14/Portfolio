@@ -20,7 +20,8 @@ const githubLinks = {
   "Travelling-Replication": "https://github.com/Fan-tome14/Travelling-Replication",
   "AloneInSpace": "https://github.com/Fan-tome14/AloneInSpace",
   "PacMan": "https://github.com/Fan-tome14/PacMan",
-  "TowerDefense": "https://github.com/Fan-tome14/TowerDefense"
+  "TowerDefense": "https://github.com/Fan-tome14/TowerDefense",
+  "Replication du temps":"https://github.com/Fan-tome14/Replication-du-temps"
 };
 
 // --- Animation d'apparition des cartes ---
