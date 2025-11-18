@@ -15,13 +15,13 @@ window.addEventListener("scroll", () => {
 
 // --- Liens GitHub ---
 const githubLinks = {
-  "SpaceShooter": "https://github.com/Fan-tome14/SpaceShooter",
-  "SuperBonusIA": "https://github.com/Fan-tome14/SuperBonusIA",
+  "Space Shooter": "https://github.com/Fan-tome14/SpaceShooter",
+  "Super Bonus IA": "https://github.com/Fan-tome14/SuperBonusIA",
   "Travelling-Replication": "https://github.com/Fan-tome14/Travelling-Replication",
-  "AloneInSpace": "https://github.com/Fan-tome14/AloneInSpace",
-  "PacMan": "https://github.com/Fan-tome14/PacMan",
-  "TowerDefense": "https://github.com/Fan-tome14/TowerDefense",
-  "Replication du temps":"https://github.com/Fan-tome14/Replication-du-temps"
+  "Alone In Space": "https://github.com/Fan-tome14/AloneInSpace",
+  "Pac Man": "https://github.com/Fan-tome14/PacMan",
+  "Tower Defense": "https://github.com/Fan-tome14/TowerDefense",
+  "Shooter AI":"https://github.com/DevShaD0ow/ShooterAI"
 };
 
 // --- Animation d'apparition des cartes ---
