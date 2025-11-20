@@ -21,7 +21,7 @@ const githubLinks = {
   "Alone In Space": "https://github.com/Fan-tome14/AloneInSpace",
   "Pac Man": "https://github.com/Fan-tome14/PacMan",
   "Tower Defense": "https://github.com/Fan-tome14/TowerDefense",
-  "Shooter AI":"https://github.com/DevShaD0ow/ShooterAI"
+  "Shooter IA": "https://github.com/DevShaD0ow/ShooterAI"
 };
 
 // --- Animation d'apparition des cartes ---
