@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
 const githubLinks = {
   "Space Shooter": "https://github.com/Fan-tome14/SpaceShooter",
   "Super Bonus IA": "https://github.com/Fan-tome14/SuperBonusIA",
-  "Travelling-Replication": "https://github.com/Fan-tome14/Travelling-Replication",
+  "AmongUS": "https://github.com/Fan-tome14/AmongUS",
   "Alone In Space": "https://github.com/Fan-tome14/AloneInSpace",
   "Pac Man": "https://github.com/Fan-tome14/PacMan",
   "Tower Defense": "https://github.com/Fan-tome14/TowerDefense",
