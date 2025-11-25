@@ -25,6 +25,18 @@ const githubLinks = {
   "Battle Snakes": "https://github.com/Fan-tome14/BattleSnakes"
 };
 
+// --- Liens vers les pages de détails des projets ---
+const projectDetailPages = {
+  "Space Shooter": "projet1.html",
+  "Super Bonus IA": "projet2.html",
+  "AmongUS": "projet3.html",
+  "Alone In Space": "projet4.html",
+  "Pac Man": "projet5.html",
+  "Tower Defense": "projet6.html",
+  "Shooter IA": "projet7.html",
+  "Battle Snakes": "projet8.html"
+};
+
 // --- Animation d'apparition des cartes ---
 const observer = new IntersectionObserver(
   (entries) => {
@@ -73,40 +85,87 @@ document.querySelectorAll(".card video").forEach((video) => {
   }
 });
 
-// --- Gestion des liens GitHub ---
+// --- Gestion des liens GitHub ET des pages de détails ---
 document.querySelectorAll(".card").forEach((card) => {
   const title = card.querySelector("h4")?.innerText.trim();
   const githubLink = githubLinks[title];
+  const detailPage = projectDetailPages[title];
 
-  if (githubLink) {
-    if (isMobile) {
-      // Sur mobile : bouton GitHub
-      let btn = document.createElement("a");
-      btn.href = githubLink;
-      btn.target = "_blank";
-      btn.innerText = "Voir sur GitHub";
-      btn.classList.add("github-btn");
-      btn.style.display = "inline-block";
-      btn.style.marginTop = "10px";
-      btn.style.padding = "5px 10px";
-      btn.style.border = "1px solid rgba(236,72,153,0.3)";
-      btn.style.borderRadius = "5px";
-      btn.style.color = "#fff";
-      btn.style.textDecoration = "none";
-      btn.style.fontFamily = "'Orbitron', sans-serif";
-      btn.style.fontSize = "12px";
-      btn.style.boxShadow = "0 0 3px rgba(236,72,153,0.2)";
-      btn.style.transition = "0.3s";
-      btn.onmouseover = () => { btn.style.boxShadow = "0 0 6px rgba(236,72,153,0.3)"; };
-      btn.onmouseout = () => { btn.style.boxShadow = "0 0 3px rgba(236,72,153,0.2)"; };
+  if (isMobile) {
+    // Sur mobile : 2 boutons (GitHub + Détails)
+    if (githubLink) {
+      let githubBtn = document.createElement("a");
+      githubBtn.href = githubLink;
+      githubBtn.target = "_blank";
+      githubBtn.innerText = "Voir sur GitHub";
+      githubBtn.classList.add("github-btn");
+      githubBtn.style.display = "inline-block";
+      githubBtn.style.marginTop = "10px";
+      githubBtn.style.marginRight = "10px";
+      githubBtn.style.padding = "5px 10px";
+      githubBtn.style.border = "1px solid rgba(236,72,153,0.3)";
+      githubBtn.style.borderRadius = "5px";
+      githubBtn.style.color = "#fff";
+      githubBtn.style.textDecoration = "none";
+      githubBtn.style.fontFamily = "'Orbitron', sans-serif";
+      githubBtn.style.fontSize = "12px";
+      githubBtn.style.boxShadow = "0 0 3px rgba(236,72,153,0.2)";
+      githubBtn.style.transition = "0.3s";
+      githubBtn.onmouseover = () => { githubBtn.style.boxShadow = "0 0 6px rgba(236,72,153,0.3)"; };
+      githubBtn.onmouseout = () => { githubBtn.style.boxShadow = "0 0 3px rgba(236,72,153,0.2)"; };
 
-      card.appendChild(btn);
-      card.style.cursor = "default"; // désactive le clic sur la carte
-    } else {
-      // Sur desktop : clic sur toute la carte
+      card.appendChild(githubBtn);
+    }
+    
+    // Bouton Détails
+    if (detailPage) {
+      let detailBtn = document.createElement("a");
+      detailBtn.href = detailPage;
+      detailBtn.innerText = "Voir les détails";
+      detailBtn.classList.add("detail-btn");
+      detailBtn.style.display = "inline-block";
+      detailBtn.style.marginTop = "10px";
+      detailBtn.style.padding = "5px 10px";
+      detailBtn.style.border = "1px solid rgba(236,72,153,0.5)";
+      detailBtn.style.borderRadius = "5px";
+      detailBtn.style.color = "#fff";
+      detailBtn.style.textDecoration = "none";
+      detailBtn.style.fontFamily = "'Orbitron', sans-serif";
+      detailBtn.style.fontSize = "12px";
+      detailBtn.style.backgroundColor = "rgba(236,72,153,0.1)";
+      detailBtn.style.boxShadow = "0 0 3px rgba(236,72,153,0.3)";
+      detailBtn.style.transition = "0.3s";
+      detailBtn.onmouseover = () => { 
+        detailBtn.style.backgroundColor = "rgba(236,72,153,0.2)";
+        detailBtn.style.boxShadow = "0 0 6px rgba(236,72,153,0.4)"; 
+      };
+      detailBtn.onmouseout = () => { 
+        detailBtn.style.backgroundColor = "rgba(236,72,153,0.1)";
+        detailBtn.style.boxShadow = "0 0 3px rgba(236,72,153,0.3)"; 
+      };
+
+      card.appendChild(detailBtn);
+    }
+    
+    card.style.cursor = "default";
+    
+  } else {
+    // Sur desktop : clic sur la carte = page de détails, Ctrl+Clic = GitHub
+    if (detailPage || githubLink) {
       card.style.cursor = "pointer";
-      card.addEventListener("click", () => {
-        window.open(githubLink, "_blank");
+      card.addEventListener("click", (e) => {
+        // Si Ctrl+Clic et qu'il y a un lien GitHub, ouvrir GitHub
+        if (e.ctrlKey && githubLink) {
+          window.open(githubLink, "_blank");
+        } 
+        // Sinon, ouvrir la page de détails
+        else if (detailPage) {
+          window.location.href = detailPage;
+        }
+        // Si pas de page de détails mais qu'il y a GitHub, ouvrir GitHub
+        else if (githubLink) {
+          window.open(githubLink, "_blank");
+        }
       });
     }
   }
@@ -177,4 +236,3 @@ function updateCards() {
     }
   });
 }
-
