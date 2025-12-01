@@ -32,7 +32,7 @@
         </div>
     </section>
 
-        <!-- Informations Techniques -->
+    <!-- Informations Techniques -->
     <section class="info-technique">
         <div class="container">
             <div class="section-header">
@@ -62,8 +62,8 @@
                     <div class="tech-label">Genre</div>
                     <div class="tech-value">
                         <span class="tooltip">
-                            Action
-                            <span class="tooltip-text">Un jeu d’action est un jeu où le joueur doit réagir rapidement, bouger, esquiver ou attaquer, en se basant surtout sur la vitesse, la coordination et les réflexes.</span>
+                            IA
+                            <span class="tooltip-text">L'IA, ou intelligence artificielle, est la simulation des capacités humaines par des machines, leur permettant d'effectuer des tâches comme le raisonnement, la planification et la créativité.</span>
                         </span>
                     </div>
                 </div>
@@ -100,10 +100,6 @@
                     <div class="tech-label">Systèmes de Jeu</div>
                     <div class="tech-tags">
                         <span class="tech-tag tooltip">
-                            Combat Dynamique
-                            <span class="tooltip-text">Système de combat en temps réel avec combos, parade et esquive, inspiré des jeux d'action modernes.</span>
-                        </span>
-                        <span class="tech-tag tooltip">
                             IA Avancée
                             <span class="tooltip-text">Intelligence artificielle basée sur Behavior Trees et Machine Learning pour des ennemis imprévisibles.</span>
                         </span>
@@ -113,25 +109,24 @@
         </div>
     </section>
 
-
     <!-- Vue d'ensemble -->
     <section class="overview">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Vue d'ensemble</div>
                 <h2 class="section-title">À propos du projet</h2>
-                <p class="section-description">Super Bonus IA est un projet d'intelligence artificielle développé sous Unreal Engine mettant en scène un crabe autonome capable de naviguer dans son environnement pour collecter des coquillages de manière intelligente.</p>
+                <p class="section-description">Attrape-tout est un jeu d'arcade développé sous Unreal Engine mettant en scène un système de capture automatique de coquillages tombants avec un mécanisme de scoring en temps réel.</p>
             </div>
             <div class="overview-grid">
                 <div class="overview-card fade-in">
                     <span class="overview-card-icon"><img src="assets/icon/crab.png" alt="Gameplay"></span>
-                    <h3 class="overview-card-title">Système d'IA</h3>
+                    <h3 class="overview-card-title">Système de Jeu</h3>
                     <div class="overview-card-content">
-                        <p>Intelligence artificielle autonome avec navigation avancée et prise de décision.</p>
+                        <p>Mécanisme de détection et capture automatique avec système de scoring dynamique.</p>
                         <ul class="overview-card-list">
-                            <li>Navigation autonome</li>
-                            <li>Système de perception</li>
-                            <li>Collecte optimisée</li>
+                            <li>Détection automatique</li>
+                            <li>Système d'overlap</li>
+                            <li>Capture optimisée</li>
                         </ul>
                     </div>
                 </div>
@@ -139,11 +134,11 @@
                     <span class="overview-card-icon"><img src="assets/icon/lightning.png" alt="Gameplay"></span>
                     <h3 class="overview-card-title">Technologies</h3>
                     <div class="overview-card-content">
-                        <p>Développé avec Unreal Engine et C++ avec focus sur l'IA comportementale.</p>
+                        <p>Développé avec Unreal Engine et C++ avec focus sur les mécaniques de gameplay arcade.</p>
                         <ul class="overview-card-list">
                             <li>Unreal Engine 5</li>
                             <li>C++ natif</li>
-                            <li>Behavior Trees</li>
+                            <li>Système physique</li>
                         </ul>
                     </div>
                 </div>
@@ -151,11 +146,11 @@
                     <span class="overview-card-icon"><img src="assets/icon/joystick.png" alt="Gameplay"></span>
                     <h3 class="overview-card-title">Caractéristiques</h3>
                     <div class="overview-card-content">
-                        <p>IA crabe avec comportements réalistes et système de décision intelligent.</p>
+                        <p>Jeu arcade avec détection de collision et système de gestion de score en temps réel.</p>
                         <ul class="overview-card-list">
-                            <li>Behavior Trees</li>
-                            <li>EQS (Environment Query System)</li>
-                            <li>Navigation Mesh</li>
+                            <li>Détection de collision</li>
+                            <li>Spawning dynamique</li>
+                            <li>Score Manager</li>
                         </ul>
                     </div>
                 </div>
@@ -174,22 +169,22 @@
                 <div class="objectif-item fade-in">
                     <div class="objectif-number">01</div>
                     <div class="objectif-content">
-                        <h3>Maîtriser l'IA dans Unreal</h3>
-                        <p>Développer une intelligence artificielle autonome capable de naviguer dans un environnement 3D complexe en utilisant les Behavior Trees et l'Environment Query System d'Unreal Engine pour prendre des décisions intelligentes.</p>
+                        <h3>Maîtriser les Mécaniques de Jeu</h3>
+                        <p>Développer un système de gameplay fluide avec détection de collision précise, permettant au joueur de capturer automatiquement les coquillages qui tombent tout en maintenant un système de scoring dynamique et réactif.</p>
                     </div>
                 </div>
                 <div class="objectif-item fade-in fade-in-delay-1">
                     <div class="objectif-number">02</div>
                     <div class="objectif-content">
-                        <h3>Système de Navigation</h3>
-                        <p>Implémenter un système de navigation avancé permettant au crabe de se déplacer efficacement vers les coquillages tout en évitant les obstacles et en optimisant son chemin de collecte.</p>
+                        <h3>Système de Déplacement Intelligent</h3>
+                        <p>Implémenter un système de déplacement automatique sur l'axe Y permettant à l'attrapeur de se diriger vers le coquillage le plus proche avec un algorithme de recherche et de poursuite optimisé pour maximiser les captures.</p>
                     </div>
                 </div>
                 <div class="objectif-item fade-in fade-in-delay-2">
                     <div class="objectif-number">03</div>
                     <div class="objectif-content">
-                        <h3>Comportements Réalistes</h3>
-                        <p>Créer des comportements crédibles et réalistes pour le crabe, incluant la recherche, la collecte et le retour à la base, avec des animations fluides et des transitions naturelles.</p>
+                        <h3>Gestion Dynamique du Jeu</h3>
+                        <p>Créer un système de spawning intelligent avec déplacement aléatoire, rotation adaptative selon la direction, et intégration d'un gestionnaire de score calculant le taux de réussite en temps réel.</p>
                     </div>
                 </div>
             </div>
@@ -206,76 +201,79 @@
             <div class="method-grid">
                 <div class="method-item fade-in">
                     <div class="method-content">
-                        <h3 class="method-title">Behavior Trees</h3>
-                        <p class="method-description">L'IA du crabe utilise des Behavior Trees pour gérer sa prise de décision. Cet arbre hiérarchique permet de définir des comportements complexes en combinant des tâches simples. Le crabe peut ainsi passer de la recherche à la collecte de manière fluide.</p>
-                        <p class="method-description">Les Behavior Trees offrent une structure modulaire et réutilisable. Chaque nœud représente une action ou une condition, permettant une maintenance facile et l'ajout de nouveaux comportements sans refactoriser tout le système.</p>
+                        <h3 class="method-title">Système de Détection et Capture</h3>
+                        <p class="method-description">L'attrapeur utilise un système de détection par overlap pour identifier et capturer les coquillages. La classe AAttrapetout gère automatiquement la recherche du coquillage le plus proche en calculant la distance sur l'axe Y, puis se déplace vers celui-ci avec une vitesse contrôlée.</p>
+                        <p class="method-description">Le système d'overlap déclenche automatiquement la capture lorsqu'un coquillage entre en contact avec l'attrapeur. Le coquillage est détruit, le score est incrémenté, et le HUD est mis à jour en temps réel pour refléter la progression du joueur.</p>
                         <div class="method-details">
                             <div class="method-detail-item">
-                                <strong>Structure :</strong>
-                                <span>Arbre hiérarchique avec sélecteurs et séquences</span>
+                                <strong>Méthode :</strong>
+                                <span>FindClosestCube avec calcul de distance optimisé</span>
                             </div>
                             <div class="method-detail-item">
                                 <strong>Avantages :</strong>
-                                <span>Modularité, lisibilité, debug facilité</span>
+                                <span>Réactivité, précision, performance optimale</span>
                             </div>
                             <div class="method-detail-item">
-                                <strong>États :</strong>
-                                <span>Recherche, Déplacement, Collecte, Retour</span>
+                                <strong>Actions :</strong>
+                                <span>Recherche, Déplacement, Capture, Mise à jour</span>
                             </div>
                         </div>
                     </div>
                     <div class="method-media">
-                        <div class="media-placeholder">🌳</div>
+                        <video src="assets/SuperbonusIAimg1.mp4" autoplay loop muted></video>
+                        <div class="media-placeholder">🎯</div>
                     </div>
                 </div>
 
                 <div class="method-item fade-in fade-in-delay-1">
                     <div class="method-content">
-                        <h3 class="method-title">Environment Query System (EQS)</h3>
-                        <p class="method-description">L'EQS permet au crabe d'analyser son environnement pour prendre des décisions optimales. Le système génère des points dans l'environnement, les évalue selon différents critères, et sélectionne le meilleur emplacement pour la prochaine action.</p>
-                        <p class="method-description">Les requêtes EQS prennent en compte la distance aux coquillages, la présence d'obstacles, et l'état actuel du crabe. Cette approche garantit que l'IA choisit toujours le chemin le plus efficace tout en évitant les dangers.</p>
+                        <h3 class="method-title">Spawning Dynamique et Mouvement Seek</h3>
+                        <p class="method-description">La classe ADrop implémente un comportement de déplacement avec l'algorithme Seek pour se positionner à des coordonnées Y aléatoires. Le système génère continuellement de nouvelles cibles dans une plage définie, créant un pattern de mouvement imprévisible et engageant.</p>
+                        <p class="method-description">Lorsque le dropper atteint sa position cible, il fait tomber un coquillage avec simulation physique activée. Un timer de 2 secondes est déclenché avant de générer une nouvelle position, permettant une cadence de jeu équilibrée. La rotation s'adapte automatiquement selon la direction du mouvement.</p>
                         <div class="method-details">
                             <div class="method-detail-item">
-                                <strong>Critères :</strong>
-                                <span>Distance, obstacles, visibilité, sécurité</span>
+                                <strong>Algorithme :</strong>
+                                <span>Seek pour mouvement fluide et naturel</span>
                             </div>
                             <div class="method-detail-item">
-                                <strong>Performance :</strong>
-                                <span>Requêtes async pour ne pas bloquer le thread</span>
+                                <strong>Physique :</strong>
+                                <span>Simulation activée sur les coquillages spawnés</span>
                             </div>
                             <div class="method-detail-item">
-                                <strong>Optimisation :</strong>
-                                <span>Grille spatiale pour réduire les calculs</span>
+                                <strong>Rotation :</strong>
+                                <span>Adaptation automatique (0° droite, 180° gauche)</span>
                             </div>
                         </div>
                     </div>
                     <div class="method-media">
-                        <div class="media-placeholder">🗺️</div>
+                        <video src="assets/SuperbonusIAimg2.mp4" autoplay loop muted></video>
+                        <div class="media-placeholder">🎲</div>
                     </div>
                 </div>
 
                 <div class="method-item fade-in fade-in-delay-2">
                     <div class="method-content">
-                        <h3 class="method-title">Navigation Mesh</h3>
-                        <p class="method-description">Le NavMesh génère automatiquement une carte de navigation en analysant la géométrie de la scène. Il divise l'environnement en zones navigables et calcule des chemins optimaux entre deux points, en évitant automatiquement les obstacles.</p>
-                        <p class="method-description">Le système de pathfinding A* est utilisé pour calculer le chemin le plus court. Le NavMesh se met à jour dynamiquement lorsque des obstacles apparaissent ou disparaissent, garantissant que l'IA s'adapte aux changements de l'environnement.</p>
+                        <h3 class="method-title">Gestionnaire de Score</h3>
+                        <p class="method-description">Le ScoreManager centralise toute la gestion du score avec des compteurs pour les coquillages attrapés et tombés. Il calcule en temps réel le pourcentage de réussite du joueur, offrant une métrique claire de performance tout au long de la partie.</p>
+                        <p class="method-description">Le système communique avec l'attrapeur et le dropper via des références partagées trouvées au BeginPlay. Chaque événement de capture ou de drop déclenche automatiquement la mise à jour du HUD, garantissant une interface toujours synchronisée avec l'état du jeu.</p>
                         <div class="method-details">
                             <div class="method-detail-item">
-                                <strong>Algorithme :</strong>
-                                <span>A* pour le pathfinding optimal</span>
+                                <strong>Métriques :</strong>
+                                <span>Coquillages attrapés, tombés, taux de réussite</span>
                             </div>
                             <div class="method-detail-item">
-                                <strong>Dynamic Navmesh :</strong>
-                                <span>Mise à jour en temps réel</span>
+                                <strong>Mise à jour :</strong>
+                                <span>Temps réel avec ChangeHUD()</span>
                             </div>
                             <div class="method-detail-item">
-                                <strong>Obstacles :</strong>
-                                <span>Évitement automatique et recalcul de chemin</span>
+                                <strong>Communication :</strong>
+                                <span>TActorIterator pour trouver le manager</span>
                             </div>
                         </div>
                     </div>
                     <div class="method-media">
-                        <div class="media-placeholder">🧭</div>
+                        <video src="assets/superbonusia.mp4" autoplay loop muted></video>
+                        <div class="media-placeholder">📊</div>
                     </div>
                 </div>
             </div>
@@ -291,45 +289,27 @@
             </div>
             <div class="media-grid">
                 <div class="media-item fade-in">
+                    <video src="assets/SuperbonusIAimg2.mp4" autoplay loop muted></video>
                     <div class="media-placeholder">🖼️</div>
                     <div class="media-overlay">
-                        <div class="media-title">IA en Action</div>
-                        <div class="media-description">Le crabe collectant des coquillages</div>
+                        <div class="media-title">Spawning Dynamique et Mouvement Seek</div>
+                        <div class="media-description">Comportement de déplacement avec l'algorithme Seek</div>
                     </div>
                 </div>
                 <div class="media-item fade-in fade-in-delay-1">
+                    <video src="assets/SuperbonusIAimg1.mp4" autoplay loop muted></video>
                     <div class="media-placeholder">🎬</div>
                     <div class="media-overlay">
-                        <div class="media-title">Système de Navigation</div>
-                        <div class="media-description">Pathfinding et évitement d'obstacles</div>
-                    </div>
-                </div>
-                <div class="media-item fade-in fade-in-delay-2">
-                    <div class="media-placeholder">🎨</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Behavior Tree</div>
-                        <div class="media-description">Visualisation de l'arbre de décision</div>
-                    </div>
-                </div>
-                <div class="media-item fade-in">
-                    <div class="media-placeholder">🌊</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Environnement</div>
-                        <div class="media-description">Plage et décor 3D</div>
+                        <div class="media-title">Système de Détection</div>
+                        <div class="media-description">Recherche et déplacement vers les coquillages</div>
                     </div>
                 </div>
                 <div class="media-item fade-in fade-in-delay-1">
+                    <video src="assets/SuperbonusIA.mp4" autoplay loop muted></video>
                     <div class="media-placeholder">📹</div>
                     <div class="media-overlay">
                         <div class="media-title">Vidéo Démo</div>
-                        <div class="media-description">Présentation complète de l'IA</div>
-                    </div>
-                </div>
-                <div class="media-item fade-in fade-in-delay-2">
-                    <div class="media-placeholder">⚙️</div>
-                    <div class="media-overlay">
-                        <div class="media-title">EQS Debug</div>
-                        <div class="media-description">Visualisation des requêtes environnementales</div>
+                        <div class="media-description">Présentation complète du gameplay</div>
                     </div>
                 </div>
             </div>
@@ -342,6 +322,7 @@
             <p>&copy; 2025 Super Bonus IA - Projet développé par Ines Durand</p>
         </div>
     </footer>
+
 <script>
         // Animation au scroll
         const observerOptions = {
