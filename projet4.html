@@ -181,97 +181,123 @@
                         <p>Recréer l'isolement et l'immensité de l'espace avec un design sonore spatial 3D, des effets visuels réalistes et une mise en scène qui transmet la solitude et le danger du vide spatial.</p>
                     </div>
                 </div>
-                <div class="objectif-item fade-in fade-in-delay-2">
-                    <div class="objectif-number">03</div>
-                    <div class="objectif-content">
-                        <h3>Mécaniques de Survie</h3>
-                        <p>Implémenter des systèmes de survie réalistes incluant la gestion de l'oxygène, les radiations spatiales et les dangers cosmiques, tout en maintenant le gameplay engageant et pas frustrant.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Méthodologies -->
-    <section class="methodologies">
+<section class="methodologies">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">Approche Technique</div>
                 <h2 class="section-title">Méthodologies & Techniques</h2>
             </div>
+
             <div class="method-grid">
-                <div class="method-item fade-in">
+                <!-- Système de Missions Dynamiques -->
+                <div class="method-item">
                     <div class="method-content">
-                        <h3 class="method-title">Architecture du Projet</h3>
-                        <p class="method-description">Le projet utilise une architecture modulaire permettant une maintenance facile et des évolutions rapides. Chaque composant est indépendant et communique via des interfaces bien définies.</p>
-                        <p class="method-description">Cette approche garantit la réutilisabilité du code et facilite le travail en équipe. Les systèmes sont testables individuellement avant l'intégration.</p>
+                        <h3 class="method-title">Système de Missions Dynamiques</h3>
+                        <p class="method-description">Développement d'un système de missions en C# qui s'adapte automatiquement selon le jour de jeu. Chaque journée présente des objectifs uniques avec validation en temps réel et feedback immédiat au joueur.</p>
+                        <p class="method-description">Le système utilise des toggles visuels et un suivi persistant pour garantir une expérience claire et motivante. Les missions sont organisées hiérarchiquement avec des sous-étapes pour les tâches complexes.</p>
                         <div class="method-details">
                             <div class="method-detail-item">
-                                <strong>Structure :</strong>
-                                <span>Modules indépendants et réutilisables</span>
+                                <strong>Architecture :</strong>
+                                <span>Script CheckMissionsGlobal avec validation dynamique</span>
                             </div>
                             <div class="method-detail-item">
-                                <strong>Communication :</strong>
-                                <span>Interfaces et événements</span>
+                                <strong>Progression :</strong>
+                                <span>3 jours avec missions spécifiques évolutives</span>
                             </div>
                             <div class="method-detail-item">
-                                <strong>Tests :</strong>
-                                <span>Tests unitaires et d'intégration</span>
+                                <strong>Feedback :</strong>
+                                <span>Audio, UI, et logs de débogage intégrés</span>
                             </div>
                         </div>
                     </div>
                     <div class="method-media">
+                        <video src="assets/projects/ais/object.mp4" autoplay loop muted></video>
+                        <div class="media-placeholder">📋</div>
+                    </div>
+                </div>
+
+                <!-- Objets Interactifs VR -->
+                <div class="method-item">
+                    <div class="method-content">
+                        <h3 class="method-title">Objets Interactifs VR</h3>
+                        <p class="method-description">Intégration du XR Interaction Toolkit Unity pour créer des objets manipulables en réalité virtuelle. Le casque d'astronaute utilise un système grab/attach sophistiqué avec des zones de détection précises.</p>
+                        <p class="method-description">Chaque objet possède des comportements uniques : le casque se fixe à la tête avec son audio spatial, le levier bascule avec retour haptique. Les interactions sont contextuelles et nécessitent parfois des prérequis.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Technologie :</strong>
+                                <span>XR Interaction Toolkit avec XRGrabInteractable</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Casque VR :</strong>
+                                <span>Système grab/attach avec validation de mission</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Levier :</strong>
+                                <span>Rotation ±40° avec mouvement du vaisseau</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <img src="assets/projects/ais/daily.png" alt="Gameplay">
+                        <div class="media-placeholder">🎮</div>
+                    </div>
+                </div>
+
+                <!-- Architecture Modulaire -->
+                <div class="method-item">
+                    <div class="method-content">
+                        <h3 class="method-title">Architecture Modulaire C#</h3>
+                        <p class="method-description">Le projet utilise une architecture modulaire avec séparation stricte des responsabilités. Chaque script gère un aspect précis : CheckMissionsGlobal orchestre, les scripts individuels gèrent leurs objets.</p>
+                        <p class="method-description">Les communications inter-scripts utilisent des références publiques et des propriétés avec accesseurs contrôlés. Cette approche garantit la testabilité et facilite l'ajout de nouveaux jours/missions.</p>
+                        <div class="method-details">
+                            <div class="method-detail-item">
+                                <strong>Structure :</strong>
+                                <span>Scripts spécialisés communicant via références</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Validation :</strong>
+                                <span>Système centralisé avec logs de débogage emoji</span>
+                            </div>
+                            <div class="method-detail-item">
+                                <strong>Évolutivité :</strong>
+                                <span>Ajout facile de nouveaux jours et objectifs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="method-media">
+                        <video src="assets/projects/ais/AIS.mp4" autoplay loop muted></video>
                         <div class="media-placeholder">🏗️</div>
                     </div>
                 </div>
 
-                <div class="method-item fade-in fade-in-delay-1">
+                <!-- Optimisation VR -->
+                <div class="method-item">
                     <div class="method-content">
-                        <h3 class="method-title">Optimisation Performance</h3>
-                        <p class="method-description">Des techniques d'optimisation sont appliquées pour garantir une expérience fluide. Le profiling régulier permet d'identifier et de résoudre les goulots d'étranglement.</p>
-                        <p class="method-description">L'object pooling, le culling et le LOD sont utilisés pour maintenir un framerate stable. Les ressources sont chargées de manière asynchrone pour éviter les freezes.</p>
+                        <h3 class="method-title">Optimisation Performance VR</h3>
+                        <p class="method-description">Des techniques d'optimisation spécifiques à la VR garantissent un framerate stable de 90 FPS minimum. Le profiling régulier identifie les goulots d'étranglement liés aux interactions complexes.</p>
+                        <p class="method-description">Les validations de missions utilisent des flags booléens plutôt que des recherches continues. Les sons sont chargés en mémoire et les objets recyclés pour éviter les garbage collections.</p>
                         <div class="method-details">
                             <div class="method-detail-item">
                                 <strong>Techniques :</strong>
-                                <span>Pooling, Culling, LOD, Async loading</span>
+                                <span>Caching de références, flags d'état, pooling audio</span>
                             </div>
                             <div class="method-detail-item">
-                                <strong>Profiling :</strong>
-                                <span>Analyse continue des performances</span>
+                                <strong>Validation :</strong>
+                                <span>Contrôle unique par frame avec variable dejaValider</span>
                             </div>
                             <div class="method-detail-item">
                                 <strong>Target :</strong>
-                                <span>60 FPS stable sur plateformes cibles</span>
+                                <span>90 FPS constant sur Quest 2/3 et PCVR</span>
                             </div>
                         </div>
                     </div>
                     <div class="method-media">
+                        <img src="assets/projects/ais/preview.webp" alt="Gameplay">
                         <div class="media-placeholder">⚡</div>
-                    </div>
-                </div>
-
-                <div class="method-item fade-in fade-in-delay-2">
-                    <div class="method-content">
-                        <h3 class="method-title">Itération et Tests</h3>
-                        <p class="method-description">Le développement suit un cycle itératif avec des tests fréquents auprès de joueurs. Les retours sont intégrés rapidement pour améliorer l'expérience de jeu.</p>
-                        <p class="method-description">Chaque fonctionnalité est prototypée rapidement, testée, puis raffinée. Cette approche permet de valider les idées de gameplay avant d'investir dans le polish.</p>
-                        <div class="method-details">
-                            <div class="method-detail-item">
-                                <strong>Cycle :</strong>
-                                <span>Prototype, Test, Feedback, Itération</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Tests :</strong>
-                                <span>Playtests réguliers avec joueurs</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Analytics :</strong>
-                                <span>Données de jeu pour guider le design</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="method-media">
-                        <div class="media-placeholder">🔄</div>
                     </div>
                 </div>
             </div>
@@ -286,28 +312,16 @@
                 <h2 class="section-title">Galerie Médias</h2>
             </div>
             <div class="media-grid">
-                <div class="media-item fade-in">
-                    <div class="media-placeholder">🖼️</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Vue Gameplay</div>
-                        <div class="media-description">Aperçu du jeu en action</div>
-                    </div>
-                </div>
                 <div class="media-item fade-in fade-in-delay-1">
+                    <video src="assets/projects/ais/object.mp4" autoplay loop muted></video>
                     <div class="media-placeholder">🎬</div>
                     <div class="media-overlay">
                         <div class="media-title">Mécaniques de Jeu</div>
                         <div class="media-description">Démonstration des features</div>
                     </div>
                 </div>
-                <div class="media-item fade-in fade-in-delay-2">
-                    <div class="media-placeholder">🎨</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Design Visuel</div>
-                        <div class="media-description">Éléments graphiques</div>
-                    </div>
-                </div>
                 <div class="media-item fade-in">
+                    <img src="assets/projects/ais/preview.webp" alt="Gameplay">
                     <div class="media-placeholder">🌟</div>
                     <div class="media-overlay">
                         <div class="media-title">Environnement</div>
@@ -315,17 +329,11 @@
                     </div>
                 </div>
                 <div class="media-item fade-in fade-in-delay-1">
+                    <video src="assets/projects/ais/AIS.mp4" autoplay loop muted></video>
                     <div class="media-placeholder">📹</div>
                     <div class="media-overlay">
                         <div class="media-title">Vidéo Démo</div>
                         <div class="media-description">Présentation complète</div>
-                    </div>
-                </div>
-                <div class="media-item fade-in fade-in-delay-2">
-                    <div class="media-placeholder">⚙️</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Interface</div>
-                        <div class="media-description">HUD et menus</div>
                     </div>
                 </div>
             </div>

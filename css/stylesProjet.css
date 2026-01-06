@@ -707,6 +707,10 @@
             transition-delay: 0.4s;
         }
 
+
+        
+        
+
         /* Responsive */
         @media (max-width: 768px) {
             .back-button,
