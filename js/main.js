@@ -22,7 +22,9 @@ const githubLinks = {
   "Pac Man": "https://github.com/Fan-tome14/PacMan",
   "Tower Defense": "https://github.com/Fan-tome14/TowerDefense",
   "Shooter IA": "https://github.com/DevShaD0ow/ShooterAI",
-  "Battle Snakes": "https://github.com/Fan-tome14/BattleSnakes"
+  "Battle Snakes": "https://github.com/Fan-tome14/BattleSnakes",
+  "Snake": "https://github.com/Fan-tome14/Snake",
+  "Relic Of The Past": "https://github.com/Fan-tome14/RelicOfThePast"
 };
 
 // --- Liens vers les pages de détails des projets ---
@@ -34,7 +36,9 @@ const projectDetailPages = {
   "Pac Man": "projet5.html",
   "Tower Defense": "projet6.html",
   "Shooter IA": "projet7.html",
-  "Battle Snakes": "projet8.html"
+  "Battle Snakes": "projet8.html",
+  "Snake" : "projet9.html",
+  "Relic Of The Past" : "projet10.html"
 };
 
 // --- Animation d'apparition des cartes ---
