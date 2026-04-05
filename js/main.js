@@ -31,14 +31,14 @@ const githubLinks = {
 const projectDetailPages = {
   "Space Shooter": "projet1.html",
   "Super Bonus IA": "projet2.html",
-  "AmongUS": "projet3.html",
+  //"AmongUS": "projet3.html",
   "Alone In Space": "projet4.html",
-  "Pac Man": "projet5.html",
-  "Tower Defense": "projet6.html",
-  "Shooter IA": "projet7.html",
-  "Battle Snakes": "projet8.html",
-  "Snake" : "projet9.html",
-  "Relic Of The Past" : "projet10.html"
+  //"Pac Man": "projet5.html",
+  //"Tower Defense": "projet6.html",
+  //"Shooter IA": "projet7.html",
+  //"Battle Snakes": "projet8.html",
+  //"Snake" : "projet9.html",
+  //"Relic Of The Past" : "projet10.html"
 };
 
 // --- Animation d'apparition des cartes ---
