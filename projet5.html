@@ -44,8 +44,8 @@
                     <div class="tech-label">Type de Projet</div>
                     <div class="tech-value">
                         <span class="tooltip">
-                            Jeu Vidéo RPG
-                            <span class="tooltip-text">Jeu de rôle (Role-Playing Game) où le joueur incarne un personnage et progresse en développant ses compétences et son équipement.</span>
+                            PacMan
+                            <span class="tooltip-text">Pac-Man est un jeu d'arcade emblématique créé par Toru Iwatani pour Namco, sorti en 1980. Le joueur dirige une pastille jaune (le personnage éponyme) dans un labyrinthe, avec pour but de manger toutes les « pac-gommes » tout en évitant quatre fantômes. Manger des « super pac-gommes » permet de rendre les fantômes vulnérables.</span>
                         </span>
                     </div>
                 </div>
@@ -55,24 +55,6 @@
                         <span class="tooltip">
                             Unreal Engine 5.3
                             <span class="tooltip-text">Moteur de jeu développé par Epic Games, offrant des graphismes de pointe avec Lumen (éclairage dynamique) et Nanite (géométrie virtualisée).</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="tech-item fade-in">
-                    <div class="tech-label">Genre</div>
-                    <div class="tech-value">
-                        <span class="tooltip">
-                            Action-RPG / Monde Ouvert
-                            <span class="tooltip-text">Combinaison d'action en temps réel et d'éléments RPG dans un environnement vaste et explorable sans limites artificielles.</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="tech-item fade-in">
-                    <div class="tech-label">Plateformes</div>
-                    <div class="tech-value">
-                        <span class="tooltip">
-                            PC, PS5, Xbox Series X/S
-                            <span class="tooltip-text">Compatible avec les plateformes de nouvelle génération offrant du ray tracing matériel et des SSD ultra-rapides.</span>
                         </span>
                     </div>
                 </div>
@@ -90,14 +72,6 @@
                             Blueprint
                             <span class="tooltip-text">Système de scripting visuel d'Unreal Engine pour le prototypage rapide et la logique de jeu.</span>
                         </span>
-                        <span class="tech-tag tooltip">
-                            Python
-                            <span class="tooltip-text">Utilisé pour les outils d'édition, l'automatisation et les pipelines de build.</span>
-                        </span>
-                        <span class="tech-tag tooltip">
-                            HLSL
-                            <span class="tooltip-text">High-Level Shading Language - langage pour créer des shaders personnalisés et des effets visuels.</span>
-                        </span>
                     </div>
                 </div>
                 <div class="tech-item fade-in">
@@ -108,37 +82,8 @@
                             <span class="tooltip-text">Logiciel open-source de modélisation 3D pour créer les personnages et environnements.</span>
                         </span>
                         <span class="tech-tag tooltip">
-                            Substance Painter
-                            <span class="tooltip-text">Outil de texturing 3D pour créer des matériaux et textures photoréalistes.</span>
-                        </span>
-                        <span class="tech-tag tooltip">
-                            Houdini
-                            <span class="tooltip-text">Logiciel de génération procédurale pour créer des effets complexes et environnements dynamiques.</span>
-                        </span>
-                        <span class="tech-tag tooltip">
                             Git
                             <span class="tooltip-text">Système de contrôle de version pour gérer le code source et collaborer en équipe.</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="tech-item fade-in">
-                    <div class="tech-label">Systèmes de Jeu</div>
-                    <div class="tech-tags">
-                        <span class="tech-tag tooltip">
-                            Combat Dynamique
-                            <span class="tooltip-text">Système de combat en temps réel avec combos, parade et esquive, inspiré des jeux d'action modernes.</span>
-                        </span>
-                        <span class="tech-tag tooltip">
-                            Crafting
-                            <span class="tooltip-text">Système de fabrication permettant de créer armes, armures et consommables à partir de ressources.</span>
-                        </span>
-                        <span class="tech-tag tooltip">
-                            IA Avancée
-                            <span class="tooltip-text">Intelligence artificielle basée sur Behavior Trees et Machine Learning pour des ennemis imprévisibles.</span>
-                        </span>
-                        <span class="tech-tag tooltip">
-                            Physique Réaliste
-                            <span class="tooltip-text">Moteur physique avec destruction d'environnement, ragdoll et simulation de fluides.</span>
                         </span>
                     </div>
                 </div>
@@ -240,75 +185,38 @@
             <div class="method-grid">
                 <div class="method-item fade-in">
                     <div class="method-content">
-                        <h3 class="method-title">Architecture du Projet</h3>
-                        <p class="method-description">Le projet utilise une architecture modulaire permettant une maintenance facile et des évolutions rapides. Chaque composant est indépendant et communique via des interfaces bien définies.</p>
-                        <p class="method-description">Cette approche garantit la réutilisabilité du code et facilite le travail en équipe. Les systèmes sont testables individuellement avant l'intégration.</p>
-                        <div class="method-details">
-                            <div class="method-detail-item">
-                                <strong>Structure :</strong>
-                                <span>Modules indépendants et réutilisables</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Communication :</strong>
-                                <span>Interfaces et événements</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Tests :</strong>
-                                <span>Tests unitaires et d'intégration</span>
-                            </div>
-                        </div>
+                        <h3 class="method-title">Navigation des IA</h3>
+                        <p class="method-description">Dans mon projet inspiré de Pac-Man, j’ai conçu une carte en m’appuyant sur un Volume de limite de maillage de navigation, permettant de définir précisément les zones où les entités peuvent se déplacer. La structure du labyrinthe a été pensée pour assurer une navigation fluide et cohérente.</p>
+                        <p class="method-description">Les murs ont été réalisés sous forme de blocs creusés, ce qui permet de délimiter clairement les chemins tout en optimisant la gestion des collisions et des déplacements. Cette approche garantit une bonne lisibilité du niveau et un gameplay équilibré.</p>
                     </div>
                     <div class="method-media">
+                        <img src="assets/projects/pacman/nav.png" alt="Gameplay">
                         <div class="media-placeholder">🏗️</div>
                     </div>
                 </div>
 
                 <div class="method-item fade-in fade-in-delay-1">
                     <div class="method-content">
-                        <h3 class="method-title">Optimisation Performance</h3>
-                        <p class="method-description">Des techniques d'optimisation sont appliquées pour garantir une expérience fluide. Le profiling régulier permet d'identifier et de résoudre les goulots d'étranglement.</p>
-                        <p class="method-description">L'object pooling, le culling et le LOD sont utilisés pour maintenir un framerate stable. Les ressources sont chargées de manière asynchrone pour éviter les freezes.</p>
-                        <div class="method-details">
-                            <div class="method-detail-item">
-                                <strong>Techniques :</strong>
-                                <span>Pooling, Culling, LOD, Async loading</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Profiling :</strong>
-                                <span>Analyse continue des performances</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Target :</strong>
-                                <span>60 FPS stable sur plateformes cibles</span>
-                            </div>
-                        </div>
+                        <h3 class="method-title">Implémentation des Behavior Trees</h3>
+                        <p class="method-description">Pour gérer le comportement des quatre fantômes, j’ai mis en place des Behavior Trees permettant de contrôler leurs déplacements et leurs prises de décision de manière dynamique.</p>
+                        <p class="method-description">Chaque fantôme possède une logique similaire basée sur des conditions (états normal ou éliminé), mais avec des variations dans la manière de déterminer leur cible. Des tâches spécifiques permettent par exemple de récupérer la position du joueur ou de calculer des positions stratégiques, avant d’utiliser des actions de déplacement pour poursuivre ou anticiper ses mouvements.</p>
+                        <p class="method-description">Cette approche permet d’obtenir des comportements crédibles et différenciés entre les fantômes, tout en gardant une structure modulaire et facilement ajustable.</p>
                     </div>
                     <div class="method-media">
+                        <img src="assets/projects/pacman/tree.png" alt="Gameplay">
                         <div class="media-placeholder">⚡</div>
                     </div>
                 </div>
 
                 <div class="method-item fade-in fade-in-delay-2">
                     <div class="method-content">
-                        <h3 class="method-title">Itération et Tests</h3>
-                        <p class="method-description">Le développement suit un cycle itératif avec des tests fréquents auprès de joueurs. Les retours sont intégrés rapidement pour améliorer l'expérience de jeu.</p>
-                        <p class="method-description">Chaque fonctionnalité est prototypée rapidement, testée, puis raffinée. Cette approche permet de valider les idées de gameplay avant d'investir dans le polish.</p>
-                        <div class="method-details">
-                            <div class="method-detail-item">
-                                <strong>Cycle :</strong>
-                                <span>Prototype, Test, Feedback, Itération</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Tests :</strong>
-                                <span>Playtests réguliers avec joueurs</span>
-                            </div>
-                            <div class="method-detail-item">
-                                <strong>Analytics :</strong>
-                                <span>Données de jeu pour guider le design</span>
-                            </div>
-                        </div>
+                        <h3 class="method-title">Score et de power-ups</h3>
+                        <p class="method-description">Le gameplay repose sur un système de collecte de points à travers deux types de gommes. Les gommes classiques permettent d’augmenter progressivement le score du joueur, tout en l’incitant à explorer l’ensemble du labyrinthe.</p>
+                        <p class="method-description">Les pac-gommes, quant à elles, introduisent une mécanique stratégique en déclenchant un changement d’état des fantômes. Lorsqu’elles sont consommées, les ennemis passent en mode fuite, modifiant temporairement leur comportement et offrant au joueur une opportunité de reprendre l’avantage.</p>
+                        <p class="method-description">Ce système crée un équilibre entre prise de risque et récompense, rendant le gameplay plus dynamique et engageant.</p>
                     </div>
                     <div class="method-media">
+                        <video src="assets/projects/pacman/VideoV4.mp4" autoplay loop muted></video>
                         <div class="media-placeholder">🔄</div>
                     </div>
                 </div>
@@ -324,46 +232,28 @@
                 <h2 class="section-title">Galerie Médias</h2>
             </div>
             <div class="media-grid">
-                <div class="media-item fade-in">
-                    <div class="media-placeholder">🖼️</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Vue Gameplay</div>
-                        <div class="media-description">Aperçu du jeu en action</div>
-                    </div>
-                </div>
                 <div class="media-item fade-in fade-in-delay-1">
+                    <img src="assets/projects/pacman/nav.png" alt="Gameplay">
                     <div class="media-placeholder">🎬</div>
                     <div class="media-overlay">
-                        <div class="media-title">Mécaniques de Jeu</div>
+                        <div class="media-title">Map et navigation</div>
                         <div class="media-description">Démonstration des features</div>
                     </div>
                 </div>
-                <div class="media-item fade-in fade-in-delay-2">
-                    <div class="media-placeholder">🎨</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Design Visuel</div>
-                        <div class="media-description">Éléments graphiques</div>
-                    </div>
-                </div>
                 <div class="media-item fade-in">
+                    <img src="assets/projects/pacman/tree.png" alt="Gameplay">
                     <div class="media-placeholder">🌟</div>
                     <div class="media-overlay">
-                        <div class="media-title">Environnement</div>
+                        <div class="media-title">Système d'IA</div>
                         <div class="media-description">Décors et ambiance</div>
                     </div>
                 </div>
                 <div class="media-item fade-in fade-in-delay-1">
+                    <video src="assets/projects/pacman/VideoV4.mp4" autoplay loop muted></video>
                     <div class="media-placeholder">📹</div>
                     <div class="media-overlay">
                         <div class="media-title">Vidéo Démo</div>
                         <div class="media-description">Présentation complète</div>
-                    </div>
-                </div>
-                <div class="media-item fade-in fade-in-delay-2">
-                    <div class="media-placeholder">⚙️</div>
-                    <div class="media-overlay">
-                        <div class="media-title">Interface</div>
-                        <div class="media-description">HUD et menus</div>
                     </div>
                 </div>
             </div>

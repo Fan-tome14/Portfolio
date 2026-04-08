@@ -33,7 +33,7 @@ const projectDetailPages = {
   "Super Bonus IA": "projet2.html",
   //"AmongUS": "projet3.html",
   "Alone In Space": "projet4.html",
-  //"Pac Man": "projet5.html",
+  "Pac Man": "projet5.html",
   //"Tower Defense": "projet6.html",
   //"Shooter IA": "projet7.html",
   //"Battle Snakes": "projet8.html",
